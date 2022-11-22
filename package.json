@@ -1,0 +1,17 @@
+{
+  "private": true,
+  "scripts": {
+    "watch": "nodemon",
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "chokidar": "^3.3.0",
+    "debug": "^4.1.1",
+    "node-json-rpc": "^0.0.1",
+    "real-debrid-api": "1.0.1",
+    "request": "^2.88.2"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.1"
+  }
+}
