@@ -16,7 +16,6 @@ WATCH_RATE | Rate to check for updates | 5000
 #### Requirements
 
 * Docker
-* aria2 with JSON-RPC enabled
 
 #### Setup
 
