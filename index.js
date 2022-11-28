@@ -33,13 +33,15 @@ chokidar
     depth: 99
   })
   .on('add', path => {
-    if (path.indexOf('/.') !== -1) {
-      return
+    if (path.indexOf('/.') !== -1 || path.indexOf('.queued') !== -1) {
+      console.log(`Ignoring '${path}' because it is a work file`)
+    } else if (path.indexOf('.torrent') !== -1) {
+      watcher.addTorrent(path)
+    } else if (path.indexOf('.magnet') !== -1) {
+      watcher.addMagnet(path)
+    } else {
+      console.log(`Ignoring '${path}' because it has an unknown extension`)
     }
-    if (path.indexOf('.torrent') === -1 && path.indexOf('.magnet') === -1) {
-      return
-    }
-    watcher.addTorrent(path)
   })
 
 // Check the torrent watch list every "WATCH_RATE" ms
